@@ -5,8 +5,8 @@ AniRewind reads the public anime list for an AniList username, totals the `repea
 ## Run locally
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Then open the local URL printed by Vite.
@@ -24,9 +24,9 @@ No username or list data is sent anywhere other than AniList. The most recently 
 ## Commands
 
 ```bash
-npm run test
-npm run build
-npm run preview
+pnpm test
+pnpm build
+pnpm preview
 ```
 
 The visual concepts used for implementation are stored in [`design/`](./design/).
