@@ -200,9 +200,9 @@ function Cover({ entry }) {
   )
 }
 
-function RewatchBars({ count, max }) {
+function RewatchBars({ count }) {
   const barCount = 10
-  const filled = Math.max(1, Math.round((count / Math.max(max, 1)) * barCount))
+  const filled = Math.min(Math.max(Math.trunc(count), 0), barCount)
 
   return (
     <span className="rewatch-bars" aria-hidden="true">
@@ -213,7 +213,7 @@ function RewatchBars({ count, max }) {
   )
 }
 
-function RankingRow({ entry, index, max, selected, onSelect }) {
+function RankingRow({ entry, index, selected, onSelect }) {
   const title = getDisplayTitle(entry)
   const countLabel = `${entry.repeat.toLocaleString()} ${entry.repeat === 1 ? 'rewatch' : 'rewatches'}`
   const Component = entry.media?.siteUrl ? 'a' : 'button'
@@ -233,7 +233,7 @@ function RankingRow({ entry, index, max, selected, onSelect }) {
       <span className="rank">{index + 1}.</span>
       <Cover entry={entry} />
       <span className="row-title">{title}</span>
-      <RewatchBars count={entry.repeat} max={max} />
+      <RewatchBars count={entry.repeat} />
       <span className="row-count"><b>{entry.repeat.toLocaleString()}</b><span>{countLabel}</span></span>
       <span className="row-arrow"><ArrowRightIcon /></span>
     </Component>
@@ -295,7 +295,6 @@ function Rankings({ summary, sort, onSort, status, activeUser }) {
             <RankingRow
               entry={entry}
               index={index}
-              max={summary.topCount}
               selected={selectedId === entry.id}
               onSelect={() => setSelectedId(entry.id)}
               key={entry.id}
