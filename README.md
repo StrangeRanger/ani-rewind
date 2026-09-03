@@ -2,6 +2,16 @@
 
 AniRewind reads the public anime list for an AniList username, totals the `repeat` value saved on every unique entry, and ranks the user's most rewatched shows.
 
+## AI disclosure
+
+This project was created using ChatGPT. ChatGPT generated the application code,
+interface, tests, documentation, and project configuration in response to guidance
+from the repository owner.
+
+This disclosure is intentional: the project should not be presented or understood
+as work authored solely by the repository owner. Transparency about the role of AI
+in its creation is an explicit part of the project.
+
 ## Run locally
 
 ```bash
