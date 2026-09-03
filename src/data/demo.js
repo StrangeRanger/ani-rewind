@@ -1,0 +1,86 @@
+export const demoEntries = [
+  {
+    id: 'demo-1',
+    repeat: 9,
+    updatedAt: 1787961600,
+    spritePosition: '0% 0%',
+    media: { title: { english: 'Starlight Diner' } },
+  },
+  {
+    id: 'demo-2',
+    repeat: 8,
+    updatedAt: 1786579200,
+    spritePosition: '50% 0%',
+    media: { title: { english: 'Paper Cranes' } },
+  },
+  {
+    id: 'demo-3',
+    repeat: 7,
+    updatedAt: 1784937600,
+    spritePosition: '100% 0%',
+    media: { title: { english: 'After the Rain' } },
+  },
+  {
+    id: 'demo-4',
+    repeat: 6,
+    updatedAt: 1783555200,
+    spritePosition: '0% 100%',
+    media: { title: { english: 'Summer Static' } },
+  },
+  {
+    id: 'demo-5',
+    repeat: 5,
+    updatedAt: 1781654400,
+    spritePosition: '50% 100%',
+    media: { title: { english: 'Moonlit Letters' } },
+  },
+  {
+    id: 'demo-6',
+    repeat: 4,
+    updatedAt: 1779062400,
+    spritePosition: '100% 100%',
+    media: { title: { english: 'Second Platform' } },
+  },
+  {
+    id: 'demo-7',
+    repeat: 3,
+    updatedAt: 1776470400,
+    spritePosition: '50% 0%',
+    media: { title: { english: 'Small Constellations' } },
+  },
+  {
+    id: 'demo-8',
+    repeat: 2,
+    updatedAt: 1773792000,
+    spritePosition: '0% 100%',
+    media: { title: { english: 'Blue Hour Radio' } },
+  },
+  {
+    id: 'demo-9',
+    repeat: 1,
+    updatedAt: 1771200000,
+    spritePosition: '100% 100%',
+    media: { title: { english: 'The Long Way Home' } },
+  },
+  {
+    id: 'demo-10',
+    repeat: 1,
+    updatedAt: 1768608000,
+    spritePosition: '100% 0%',
+    media: { title: { english: 'Rain Map' } },
+  },
+  {
+    id: 'demo-11',
+    repeat: 1,
+    updatedAt: 1765929600,
+    spritePosition: '50% 100%',
+    media: { title: { english: 'Postmarked Spring' } },
+  },
+]
+
+export const demoSummary = {
+  entries: demoEntries,
+  totalRewatches: 47,
+  rewatchedTitles: demoEntries.length,
+  topCount: 9,
+}
