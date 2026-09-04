@@ -1,5 +1,7 @@
 # AniRewind
 
+[![Project Tracker](https://img.shields.io/badge/repo%20status-Project%20Tracker-lightgrey)](https://hthompson.dev/project-tracker#project-1356542676)
+
 AniRewind reads the public anime list for an AniList username, totals the `repeat` value saved on every unique entry, and ranks the user's most rewatched shows.
 
 ## AI disclosure
