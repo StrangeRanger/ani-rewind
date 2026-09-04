@@ -250,7 +250,7 @@ function EmptyState({ userName }) {
   )
 }
 
-function Rankings({ summary, sort, onSort, status, activeUser }) {
+function Rankings({ summary, sort, onSort, status, activeUser, activeUserProfileUrl }) {
   const [selectedId, setSelectedId] = useState(summary.entries[0]?.id)
   const sortedEntries = useMemo(() => {
     const entries = [...summary.entries]
@@ -277,7 +277,19 @@ function Rankings({ summary, sort, onSort, status, activeUser }) {
       <div className="section-heading">
         <div>
           <h2>Most rewatched</h2>
-          {activeUser ? <p>Showing @{activeUser}</p> : null}
+          {activeUser ? (
+            <p>
+              Showing{' '}
+              <a
+                href={activeUserProfileUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Open ${activeUser}'s AniList profile`}
+              >
+                @{activeUser}
+              </a>
+            </p>
+          ) : null}
         </div>
         <label className="sort-control">
           <span className="sr-only">Sort rankings</span>
@@ -317,6 +329,9 @@ function App() {
   const [status, setStatus] = useState('idle')
   const [error, setError] = useState('')
   const requestRef = useRef(null)
+  const activeUserProfileUrl = activeUser
+    ? summary.user?.siteUrl || `https://anilist.co/user/${encodeURIComponent(activeUser)}/`
+    : ''
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
@@ -382,6 +397,7 @@ function App() {
           onSort={(event) => setSort(event.target.value)}
           status={status}
           activeUser={activeUser}
+          activeUserProfileUrl={activeUserProfileUrl}
         />
       </main>
       <footer id="about">
