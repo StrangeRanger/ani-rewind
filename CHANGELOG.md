@@ -7,8 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-09-03
+
 ### Added
 
+- Added a direct link from the active username above the rankings to the user's
+  AniList profile.
+- Added Renovate configuration for automated dependency updates.
 - Added an explicit README disclosure crediting ChatGPT's role in creating the
   project.
 
