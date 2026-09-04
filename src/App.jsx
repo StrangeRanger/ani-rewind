@@ -62,8 +62,8 @@ function StatIcon({ type }) {
   if (type === 'total') {
     return (
       <svg aria-hidden="true" viewBox="0 0 32 32">
-        <path d="M8.2 10.5A10.5 10.5 0 1 1 5.5 18" />
-        <path d="m3.8 10.6 4.7-.7.7 4.7" />
+        <path d="M4 16a12 12 0 1 0 12-12c-3.5 0-6.8 1.4-9 3.7L4 10.7" />
+        <path d="M4 4v6.7h6.7" />
       </svg>
     )
   }

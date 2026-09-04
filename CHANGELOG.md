@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-09-04
+
+### Fixed
+
+- Corrected the total-rewatches summary icon so its arrow connects cleanly to
+  the loop and the symbol remains visually balanced in both themes.
+
 ## [1.1.0] - 2026-09-03
 
 ### Added
