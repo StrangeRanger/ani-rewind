@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.2] - 2026-09-07
+
+### Added
+
+- Integrated Matomo analytics through the shared tracking script for page views
+  and outbound link clicks.
+
+### Changed
+
+- Updated the README to describe analytics collection.
+
 ## [1.1.1] - 2026-09-04
 
 ### Fixed

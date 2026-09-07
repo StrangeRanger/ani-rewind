@@ -31,7 +31,9 @@ Then open the local URL printed by Vite.
 - Only positive `MediaList.repeat` values are ranked and summed. AniList defines this field as the number of times the media has been rewatched.
 - Private lists require AniList authentication and are not accessible in this username-only version.
 
-No username or list data is sent anywhere other than AniList. The most recently used username and theme are saved in local browser storage.
+Anime list lookups are sent directly to AniList. The most recently used username and theme are saved in local browser storage.
+
+Matomo analytics loads through the shared script at `https://files.hthompson.dev/scripts/tracking.js`. That script currently records page views and outbound link clicks using Matomo site ID `2`, with cookies shared across `*.hthompson.dev`. Outbound profile links can include AniList usernames. Tracking is disabled in the Vite development server (`pnpm dev`) and enabled in production builds, including local previews (`pnpm preview`).
 
 ## Commands
 
