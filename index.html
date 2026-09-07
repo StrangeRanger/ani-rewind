@@ -9,7 +9,14 @@
     />
     <meta name="theme-color" content="#f1f2ff" />
     <title>AniRewind — AniList rewatch rankings</title>
-    <script defer src="https://files.hthompson.dev/scripts/tracking.js"></script>
+    <script type="module">
+      if (import.meta.env.PROD) {
+        const tracker = document.createElement('script')
+        tracker.src = 'https://files.hthompson.dev/scripts/tracking.js'
+        tracker.async = true
+        document.head.appendChild(tracker)
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
