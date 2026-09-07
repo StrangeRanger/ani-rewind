@@ -16,8 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Updated the README to describe analytics collection and local-development
-  tracking behavior.
+- Updated the README to describe analytics collection.
 
 ## [1.1.1] - 2026-09-04
 
