@@ -2,19 +2,33 @@
 
 [![Project Tracker](https://img.shields.io/badge/repo%20status-Project%20Tracker-lightgrey)](https://hthompson.dev/project-tracker#project-1356542676)
 
-AniRewind reads the public anime list for an AniList username, totals the `repeat` value saved on every unique entry, and ranks the user's most rewatched shows.
+AniRewind shows which anime you return to most. Enter an AniList username to see a ranked list of rewatched shows, your total rewatches, the number of titles you've rewatched, and your highest rewatch count.
 
-## AI disclosure
+## Using AniRewind
 
-This project was created using ChatGPT. ChatGPT generated the application code,
-interface, tests, documentation, and project configuration in response to guidance
-from the repository owner.
+1. Enter a username with a public AniList anime list and select **Count my rewatches**.
+2. Browse the results, sorting by most rewatches, title, or most recently updated list entry.
+3. Select a show to open its AniList page, or select the username above the rankings to open the user's profile.
 
-This disclosure is intentional: the project should not be presented or understood
-as work authored solely by the repository owner. Transparency about the role of AI
-in its creation is an explicit part of the project.
+The page displays sample rankings until you look up a username. Light and dark themes are available from the header.
 
-## Run locally
+## Understanding the counts
+
+Counts come from the rewatch totals saved on AniList entries. Only titles with a positive rewatch count appear in the results; the original watch is not included in the total.
+
+AniRewind reads entries from both standard and custom lists, counting each list entry once even if it belongs to multiple groups. The totals reflect what is recorded on AniList, so rewatches that haven't been logged there won't appear.
+
+Only public anime lists are supported. AniRewind does not offer AniList sign-in or access to private lists.
+
+## Data and privacy
+
+Anime list lookups are sent directly from your browser to the AniList GraphQL API. Your most recently used username and theme preference are saved in local browser storage.
+
+Production builds load [the shared Matomo analytics script](https://files.hthompson.dev/scripts/tracking.js) for page views and outbound link clicks, with cookies shared across `*.hthompson.dev`. Analytics runs in local production previews (`pnpm preview`) as well as deployed builds; it is disabled in the development server (`pnpm dev`).
+
+## Local development
+
+AniRewind is a React application built with Vite. Install Node.js and the pnpm version specified in [`package.json`](./package.json), then run:
 
 ```bash
 pnpm install
@@ -23,24 +37,17 @@ pnpm dev
 
 Then open the local URL printed by Vite.
 
-## How counting works
+### Commands
 
-- The browser sends one public GraphQL request directly to `https://graphql.anilist.co`.
-- `MediaListCollection` is used so entries hidden from default status lists but present in custom lists are included.
-- Entries are deduplicated by AniList list-entry ID before counting, since an entry can appear in more than one returned group.
-- Only positive `MediaList.repeat` values are ranked and summed. AniList defines this field as the number of times the media has been rewatched.
-- Private lists require AniList authentication and are not accessible in this username-only version.
+| Command | Purpose |
+| --- | --- |
+| `pnpm dev` | Start the local development server. |
+| `pnpm test` | Run the automated tests. |
+| `pnpm build` | Build the production site into `dist/`. |
+| `pnpm preview` | Serve the production build locally after running `pnpm build`. |
 
-Anime list lookups are sent directly to AniList. The most recently used username and theme are saved in local browser storage.
+## AI disclosure
 
-Matomo analytics loads through the shared script at `https://files.hthompson.dev/scripts/tracking.js`. That script currently records page views and outbound link clicks using Matomo site ID `2`, with cookies shared across `*.hthompson.dev`. Tracking is disabled in the Vite development server (`pnpm dev`) and enabled in production builds, including local previews (`pnpm preview`).
-
-## Commands
-
-```bash
-pnpm test
-pnpm build
-pnpm preview
-```
-
-The visual concepts used for implementation are stored in [`design/`](./design/).
+This project was created using ChatGPT. ChatGPT generated the application code,
+interface, tests, documentation, and project configuration in response to guidance
+from the repository owner. The project is not solely authored by the repository owner.
